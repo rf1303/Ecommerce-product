@@ -1,0 +1,16 @@
+@use 'reset';
+@use 'variables' as *;
+@use 'mixin' as *;
+@use 'font-face' as *;
+
+@include fontFace('kumbh', '../fonts/KumbhSans-VariableFont_YOPQ,wght.woff2', 100 900);
+
+@include fontFace('kumbhttf', '../fonts/KumbhSans-VariableFont_YOPQ,wght.ttf', 100 900);
+
+body{
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+}
