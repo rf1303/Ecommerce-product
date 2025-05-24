@@ -10,15 +10,15 @@
     <title>Frontend Mentor | E-commerce product page</title>
 </head>
 <body>
-    <header class="wrappers__headers"> 
-        <section class=""> 
+    <header class="wrappers__headers "> 
+        <section class="headers__menu-open"> 
             <button type="button" class="button__head-open">
-                 <img class="button__images" src="./assets/images/icon-menu.svg" alt=""> 
+                 <img class="button__menu" src="./assets/images/icon-menu.svg" alt=""> 
             </button>
             <img class="headers__logo" src="./assets/images/logo.svg" alt=""> 
         </section>
-        <nav class="wrappers__nav"> 
-            <button type="button" class="button__head-close">
+        <nav class="wrappers__nav "> <!-- display__none -->
+            <button type="button" class="button__head-close display__none ">
                  <img class="button__images" src="./assets/images/icon-close.svg" alt=""> 
             </button>
             <ul class="nav__menu">
@@ -39,39 +39,39 @@
                </li> 
             </ul>
         </nav>
+        <div class="wrappers__nav--bg display__none"></div>
         <section class="wrappers__cart"> 
-            <button type="button" class="button__cart">
-                <img class="cart__image" src="./assets/images/icon-cart.svg" alt=""> 
-            </button>
-            <section class="cart__box"> 
-                <h2 class="cart__title">Cart</h2>
-                <section class="cart__items"> 
-                   <img class="items__images" src="./assets/images/image-product-1-thumbnail.jpg" alt="thumbail">  
-                   <section class="items__product"> 
-                       <span class="items__details">Fall Limited Edition Sneakers</span>
-                       <section class="items__numbers"> 
-                           <p>$</p>
-                           <span class="items__price">125</span>
-                           <p>x</p>
-                           <span class="items__nro">3</span>
-                           <span class="Items__total">$375</span>
-                       </section>
-                   </section>
-                </section>
-                <button type="button" class="button__trash">
-                    <img class="trash__image" src="./assets/images/icon-delete.svg" alt=""> 
+            <section class="wrappers__avatar"> 
+                <button type="button" class="button__cart">
+                    <img class="cart__image" src="./assets/images/icon-cart.svg" alt=""> 
                 </button>
+                <img class="avatar__image" src="./assets/images/image-avatar.png" alt=""> 
+            </section>
+        </section>  
+        <section class="cart__box display__none"> 
+            <h2 class="cart__title">Cart</h2>
+            <section class="cart__items"> 
+               <img class="items__images" src="./assets/images/image-product-1-thumbnail.jpg" alt="thumbail">  
+               <section class="items__product"> 
+                   <span class="items__details">Fall Limited Edition Sneakers</span>
+                   <section class="items__numbers"> 
+                       <span class="items__price">$125</span>
+                       <p>x</p>
+                       <span class="items__nro">3</span>
+                       <span class="items__total">$375</span>
+                   </section>
+               </section>
+               <button type="button" class="button__trash">
+                   <img class="trash__image" src="./assets/images/icon-delete.svg" alt=""> 
+               </button>
             </section>
             <button type="button" class="button__checkout">Checkout</button>
-        </section>  
-        <section class="wrappers__avatar"> 
-            <img class="avatar__image" src="./assets/images/image-avatar.png" alt=""> 
         </section>
     </header>
     <main class="wrappers__sneakers"> 
 
         <section class="wrappers__lightbox" id="lightbox"> 
-            <button type="button"class="button__products" onclick="lightboxClose()"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
+            <button type="button"class="button__products display__none" onclick="lightboxClose()"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
             </button>
 
             <section class="wrappers__products">
@@ -80,20 +80,20 @@
                     <img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""> 
                 </section>
                 
-                <section class="wrappers__images" data-nro="1"> 
+                <section class="wrappers__images display__none " data-nro="2"> 
                     <img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""> 
                 </section>
                 
-                <section class="wrappers__images" data-nro="1"> 
+                <section class="wrappers__images display__none " data-nro="3"> 
                     <img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""> 
                 </section>
                 
-                <section class="wrappers__images" data-nro="1"> 
+                <section class="wrappers__images display__none " data-nro="4"> 
                     <img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""> 
                 </section>
                 
                 <button type="button" class="button__prev" onclick="moveImage(-1)">
-                   <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg> 
+                   <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg> 
                 </button>
                 <button type="button" class="button__next" onclick="moveImage(1)">
                     <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
@@ -101,7 +101,7 @@
 
             </section>    
             
-            <section class="wrappers__thumbails"> 
+            <section class="wrappers__thumbails "> <!-- display__none -->
                 
                 <section class="thumbails__items">   
                    <img class="thumbails__images" src="./assets/images/image-product-1-thumbnail.jpg" onclick="currentSlide()" alt="">  
@@ -124,30 +124,32 @@
         </section>        
 
         <section class="wrappers__content">
-
-            <h2 class="content__subtitle">Sneaker Company</h2>
-            <h1 class="content__title">Fall Limited Edition Sneakers</h1>
-            <p class="content__lead"> 
-These low-profile sneakers are your perfect casual wear companion. Featuring a 
-durable rubber outer sole, they’ll withstand everything the weather can offer.
-            </p>            
-
+            <section class="content__heads"> 
+                <h2 class="content__subtitle">Sneaker Company</h2>
+                <h1 class="content__title">Fall Limited Edition Sneakers</h1>
+                <p class="content__lead"> 
+    These low-profile sneakers are your perfect casual wear companion. Featuring a 
+    durable rubber outer sole, they’ll withstand everything the weather can offer.
+                </p>            
+            </section>
             <section class="content__price"> 
                 <p class="price__number">$125.00 <span class="number__desc">50%</span></p> 
                 <p class="price__final">$250.00</p>
             </section>
+            <section class="wrappers__footers"> 
 
-            <section class="content__orders"> 
-                
-                <section class="content__numbers"> 
-                    <span class="numbers__minus"><svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg></span> 
-                    <p class="numbres__order">0</p>
-                    <span class="numbersn__plus"><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b"/></svg></span>
+                <section class="content__orders"> 
+                    
+                    <section class="content__numbers"> 
+                        <button type="button" class="numbers__minus"><svg width="12" height="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg></button> 
+                        <p class="numbers__order">0</p>
+                        <button type="button" class="numbers__plus"><svg width="12" height="13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b"/></svg></button>
+                    </section>
+
+                    <button type="button" class="button__add-cart">
+                       <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#1d2026" fill-rule="nonzero"/></svg> Add to cart 
+                    </button>    
                 </section>
-
-                <button type="button" class="button__add-cart">
-                   <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg> Add to cart 
-                </button>    
             </section>
         </section>
     </main>
