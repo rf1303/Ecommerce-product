@@ -485,10 +485,7 @@ body{
 
 
   .wrappers__lightbox--active {
-    /* inline-size: 34.375rem; */
     position: absolute; 
-    // inline-size: 100vi; 
-    // block-size: 100vb; 
     inset-block-start: 10%;   
     display: grid;
     grid-template-rows: 2rem minmax(34.375rem, 1fr) 5.5rem;
@@ -500,7 +497,6 @@ body{
   }
 
   .wrappers__products--active {
-
     block-size: 34.375rem;
     margin-block-end: $space-200;
   }
@@ -519,6 +515,7 @@ body{
     background-color: transparent;
     color: $white-color;
     z-index: 290;
+
   }
 
   .images__sneakers--active {
