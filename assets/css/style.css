@@ -267,6 +267,10 @@ body {
   block-size: 18.75rem;
 }
 
+.wrappers__images:target {
+  display: block;
+}
+
 .images__sneakers {
   inline-size: 100%;
   block-size: 18.75rem;
@@ -549,7 +553,6 @@ body {
     gap: 2.5rem;
   }
   .wrappers__lightbox--active {
-    /* inline-size: 34.375rem; */
     position: absolute;
     inset-block-start: 10%;
     display: grid;
