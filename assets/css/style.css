@@ -292,7 +292,10 @@ body {
   block-size: 18.75rem;
   object-fit: cover;
   object-position: 80% 0%;
-  transition: all 0.7s ease-in;
+  /* transition: transform 1s ease, opacity .7s ease; */
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .button__prev {

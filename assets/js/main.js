@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let imgIndex = 0;
     let cartNum = 0;
+    let nextPrev = 1;
 
     buttonHeadOpen.addEventListener('click', () => menuOpen(wrappersNav, wrappersBg));
 
@@ -35,16 +36,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     buttonPrev.addEventListener('click', () => {
         imgIndex--;
-        console.log('buttonPrev: ', imgIndex);
+        nextPrev = -1;
         imgIndex = ( imgIndex + imgSneakers.length) % imgSneakers.length;
-        productSneaker(imgIndex);
+        productSneaker(imgIndex, nextPrev);
     });
 
     buttonNext.addEventListener('click', () => {
         imgIndex++;
-        console.log('buttonNext: ', imgIndex);
+        nextPrev = 1;
         imgIndex = ( imgIndex + imgSneakers.length) % imgSneakers.length;
-        productSneaker(imgIndex);
+        productSneaker(imgIndex, nextPrev);
     });
 
 /* ################ CART BOX ################### */    

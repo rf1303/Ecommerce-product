@@ -11,8 +11,22 @@ export const imgSneakers = [
 
 
 
-export function productSneaker(i){
+export function productSneaker(i, np){
     const imageSneaker = document.querySelector('.images__sneakers');
-    imageSneaker.src = imgSneakers[i];
+
+    const nextPrev = np > 0 ? 15 : -15;
+    
+    imageSneaker.style.opacity = "0";
+    imageSneaker.style.transform = `translateX(${nextPrev}rem)`;
+
+    setTimeout(() => {
+        imageSneaker.src = imgSneakers[i];
+        void imageSneaker.offsetWidth;
+         
+        imageSneaker.style.transform = `translateX(0)`;
+        imageSneaker.style.opacity = "1";
+
+
+    }, 300);
 
 };
