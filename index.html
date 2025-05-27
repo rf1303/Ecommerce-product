@@ -6,19 +6,21 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/main.js" defer></script>
+    <script type="module" src="./assets/js/main.js" defer></script>
+        
     <title>Frontend Mentor | E-commerce product page</title>
 </head>
 <body>
+    <div class="wrappers__nav--bg display__none"></div>
     <header class="wrappers__headers "> 
         <section class="headers__menu-open"> 
-            <button type="button" class="button__head-open display__none ">
+            <button type="button" class="button__head-open ">
                  <img class="button__menu" src="./assets/images/icon-menu.svg" alt=""> 
             </button>
             <img class="headers__logo" src="./assets/images/logo.svg" alt=""> 
         </section>
         <nav class="wrappers__nav display__none "> 
-            <button type="button" class="button__head-close display__none ">
+            <button type="button" class="button__head-close ">
                  <img class="button__images" src="./assets/images/icon-close.svg" alt=""> 
             </button>
             <ul class="nav__menu">
@@ -39,7 +41,6 @@
                </li> 
             </ul>
         </nav>
-        <div class="wrappers__nav--bg display__none"></div>
         <section class="wrappers__cart"> 
             <section class="wrappers__avatar"> 
                 <section class="cart__avatar"> 
@@ -73,35 +74,32 @@
     </header>
     <main class="wrappers__sneakers"> 
 
-<!-- 🅰️  ######### BEGINS PRODUCTS IMGAGES  ACTIVE############### -->
+<!-- 🅰️  ######### BEGINS PRODUCTS IMGAGES  ############### -->
 
         <section class="wrappers__lightbox" id="lightbox"> 
-
-            <button type="button"class="button__products display__none" onclick="lightboxClose()"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
-            </button>
 
             <section class="wrappers__products">
 
                 <section id="images-1" class="wrappers__images" data-nro="1"> 
-                    <img class="images__sneakers" src="./assets/images/image-product-1.jpg" onclick="desktopMenu();sneakerDesk(1)" alt=""> 
+                    <button type="button" class="button__sneaker"><img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""></button>
                 </section>
                 
                 <section id="images-2" class="wrappers__images display__none " data-nro="2"> 
-                    <img class="images__sneakers" src="./assets/images/image-product-1.jpg" onclick="desktopMenu();sneakerDesk(2)" alt=""> 
+                    <img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""> 
                 </section>
                 
                 <section id="images-3" class="wrappers__images display__none " data-nro="3"> 
-                    <img class="images__sneakers" src="./assets/images/image-product-1.jpg" onclick="desktopMenu();sneakerDesk(3)" alt=""> 
+                    <img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""> 
                 </section>
                 
                 <section id="images-4" class="wrappers__images display__none " data-nro="4"> 
-                    <img class="images__sneakers" src="./assets/images/image-product-1.jpg" onclick="desktopMenu();sneakerDesk(4)" alt=""> 
+                    <img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""> 
                 </section>
                 
-                <button type="button" class="button__prev display__none " onclick="moveImage(-1)">
+                <button type="button" class="button__prev">
                    <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg> 
                 </button>
-                <button type="button" class="button__next display__none " onclick="moveImage(1)">
+                <button type="button" class="button__next">
                     <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
                 </button>
 
@@ -170,7 +168,7 @@
 
 <!-- 🅱️ <  ######### BEGINS PRODUCTS IMGAGES  ACTIVE############### -->
         
-        <div class="wrappers__nav--bg display__none "></div> <!--  BACKGROUND PRODUCTS ACTIVE -->
+        <div class="wrappers__product--bg display__none "></div> <!--  BACKGROUND PRODUCTS ACTIVE -->
 
         <section class="wrappers__lightbox--active display__none " id="lightbox"> 
                 <button type="button"class="button__products--active" onclick="lightboxClose()"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>

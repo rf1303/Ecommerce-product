@@ -105,7 +105,7 @@ body {
   display: grid;
   grid-template-rows: 1.75rem 1fr;
   gap: 3.5rem;
-  inline-size: 15.625rem;
+  inline-size: min(15.625rem, 100%);
   block-size: 100vb;
   padding: 1.5rem;
   z-index: 100;
@@ -150,7 +150,7 @@ body {
 }
 
 .nav__menu {
-  inline-size: min(6.5rem, 100%);
+  inline-size: min(5.5rem, 100%);
   font-family: kumbh, kumbhttf, sans-serif;
   font-size: 1.125rem;
   font-weight: 900;
@@ -207,6 +207,22 @@ body {
   display: grid;
   gap: 1.5rem;
   padding-block: 1.5rem;
+  opacity: 0;
+  translate: 0 -35vb;
+  transition-property: display opacity;
+  transition-duration: 0.7s;
+  transition-behavior: allow-discrete;
+}
+.cart__box:where(:not(.display__none)) {
+  display: allow-discrete flex;
+  opacity: 1;
+  translate: 0 0;
+}
+@starting-style {
+  .cart__box:where(:not(.display__none)) {
+    opacity: 0;
+    translate: 0 -35vb;
+  }
 }
 
 .cart__title {
@@ -267,14 +283,15 @@ body {
   block-size: 18.75rem;
 }
 
-.wrappers__images:target {
-  display: block;
+.button__sneaker {
+  inline-size: 100%;
 }
 
 .images__sneakers {
   inline-size: 100%;
   block-size: 18.75rem;
   object-fit: cover;
+  object-position: 50% 65%;
 }
 
 .button__prev {
@@ -421,13 +438,16 @@ body {
 
 .display__none {
   display: none !important;
-  width: 0;
-  height: 0;
 }
 
 @media (min-width: 42em) {
   .wrappers__headers {
     inline-size: min(38rem, 100%);
+  }
+  .wrappers__nav {
+    inline-size: min(18.813rem, 100%);
+    inset-inline-start: -5rem;
+    padding-inline: 5rem;
   }
   .headers__menu-open {
     inline-size: min(10.656rem, 100%);
@@ -488,14 +508,17 @@ body {
     margin-inline: 0;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.5);
   }
-  .wrappers__nav {
-    inline-size: min(15.813rem, 100%);
-    padding: 3rem;
-  }
 }
 @media (min-width: 85em) {
   .wrappers__headers {
     inline-size: min(69.375rem, 100%);
+  }
+  .button__head-open {
+    display: none !important;
+  }
+  .button__next,
+  .button__prev {
+    display: none;
   }
   .wrappers__nav {
     inline-size: 24.75rem;
