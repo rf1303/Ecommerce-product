@@ -291,7 +291,8 @@ body {
   inline-size: 100%;
   block-size: 18.75rem;
   object-fit: cover;
-  object-position: 50% 65%;
+  object-position: 80% 0%;
+  transition: all 0.7s ease-in;
 }
 
 .button__prev {
@@ -375,10 +376,13 @@ body {
   align-items: center;
 }
 
-.price__number {
+.price__total {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.price__number {
   font-family: kumbh, kumbhttf, sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
@@ -467,7 +471,7 @@ body {
   }
   .images__sneakers {
     border-radius: 1rem;
-    object-position: 50% 65%;
+    object-position: 50% 45%;
   }
   .button__prev {
     inset-block-start: 11rem;

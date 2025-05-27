@@ -225,7 +225,8 @@ body{
   inline-size:  100%;
   block-size: 18.75rem;
   object-fit: cover;
-  object-position: 50% 65%;
+  object-position: 80% 0%;
+  transition: all .7s ease-in;
 }
 
 .button__prev {
@@ -283,10 +284,13 @@ body{
   align-items: center;
 }
 
-.price__number {
+.price__total {
   display: flex;
   align-items: center;
   gap: $space-200;
+}
+
+.price__number {
   @include tgSize($text-2, 700);
   color: $darkblue;
   line-height: 1.2;
@@ -369,7 +373,7 @@ body{
   }
   .images__sneakers {
     border-radius: $space-200;
-    object-position: 50% 65%; 
+    object-position: 50% 45%; 
   }
 
   .button__prev {

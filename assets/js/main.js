@@ -1,6 +1,7 @@
 
 import {menuOpen, menuClose, cartCheck} from './menu.js';
 import { imgSneakers, productSneaker } from './products.js';
+import {cartOrder} from './cart.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('inicio');
@@ -22,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const wrappersActive = document.querySelector('.wrappers__lightbox--active');
     const buttonProduct = document.querySelector('.button__products--active');
 
-
-
     let imgIndex = 0;
+    let cartNum = 0;
 
     buttonHeadOpen.addEventListener('click', () => menuOpen(wrappersNav, wrappersBg));
 
     buttonHeadClose.addEventListener('click', () => menuClose(wrappersNav, wrappersBg));
 
+/* ############### PRODUCT GALLERY IMAGES ############# */
     buttonCart.addEventListener('click', () => cartCheck(cartBox));
 
     buttonPrev.addEventListener('click', () => {
@@ -45,6 +46,19 @@ document.addEventListener('DOMContentLoaded', function () {
         imgIndex = ( imgIndex + imgSneakers.length) % imgSneakers.length;
         productSneaker(imgIndex);
     });
+
+/* ################ CART BOX ################### */    
+
+    numbersPlus.addEventListener('click', () => {
+        cartNum++;
+        cartOrder(cartNum);
+    });
+    
+    numbersMinus.addEventListener('click', () => {
+        cartNum--;
+        cartOrder(cartNum);
+    });
+
 
 
 
