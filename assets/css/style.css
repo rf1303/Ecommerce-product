@@ -127,7 +127,6 @@ body {
   transition: opacity 0.7s ease-in-out;
 }
 
-.wrappers__lightbox--active,
 .wrappers__nav--bg,
 .wrappers__nav {
   opacity: 0;
@@ -136,7 +135,6 @@ body {
   transition-duration: 1s;
   transition-behavior: allow-discrete;
 }
-.wrappers__lightbox--active:where(:not(.display__none)),
 .wrappers__nav--bg:where(:not(.display__none)),
 .wrappers__nav:where(:not(.display__none)) {
   display: allow-discrete flex;
@@ -144,7 +142,6 @@ body {
   translate: 0 0;
 }
 @starting-style {
-  .wrappers__lightbox--active:where(:not(.display__none)),
   .wrappers__nav--bg:where(:not(.display__none)),
   .wrappers__nav:where(:not(.display__none)) {
     opacity: 0;
@@ -608,6 +605,22 @@ body {
     gap: 1.5rem;
     margin-inline: auto;
     z-index: 200;
+    opacity: 0;
+    translate: 75vh 0;
+    transition-property: display opacity;
+    transition-duration: 1s;
+    transition-behavior: allow-discrete;
+  }
+  .wrappers__lightbox--active:where(:not(.display__none)) {
+    display: allow-discrete flex;
+    opacity: 1;
+    translate: 0 0;
+  }
+  @starting-style {
+    .wrappers__lightbox--active:where(:not(.display__none)) {
+      opacity: 0;
+      translate: -75vh 0;
+    }
   }
   .wrappers__products--active {
     block-size: 34.375rem;

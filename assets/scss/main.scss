@@ -73,7 +73,6 @@ body{
   transition: opacity .7s ease-in-out;
 }
 
-.wrappers__lightbox--active,
 .wrappers__nav--bg,
 .wrappers__nav{
   opacity: 0;
@@ -519,6 +518,22 @@ body{
     gap: $space-300;
     margin-inline: auto;
     z-index: 200;
+    opacity: 0;
+    translate: 75vh 0;
+    transition-property: display opacity;
+    transition-duration: 1s;
+    transition-behavior: allow-discrete;
+
+    &:where(:not(.display__none)) {
+      display: allow-discrete flex; 
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: -75vh 0;
+      }
+    }
   }
 
   .wrappers__products--active {
