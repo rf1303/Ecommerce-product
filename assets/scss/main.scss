@@ -171,6 +171,17 @@ body{
   padding-inline: $space-150;
 }
 
+.cart__empty {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.empty__text {
+  @include tgSize($text-3, 700);
+  color: $darkgreyblue;
+}
+
 .cart__items {
   display: flex;
   align-items: center;

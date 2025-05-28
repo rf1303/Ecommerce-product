@@ -233,6 +233,19 @@ body {
   padding-inline: 0.75rem;
 }
 
+.cart__empty {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.empty__text {
+  font-family: kumbh, kumbhttf, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #69707d;
+}
+
 .cart__items {
   display: flex;
   align-items: center;
