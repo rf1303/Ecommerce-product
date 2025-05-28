@@ -1,5 +1,5 @@
 
-import {menuOpen, menuClose, cartCheck} from './menu.js';
+import {menuOpen, menuClose, cartCheck, menuList} from './menu.js';
 import { imgSneakers, productSneaker } from './products.js';
 import {cartOrder, cartAdd, cartTrash} from './cart.js';
 
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const buttonNext = document.querySelector('.button__next');
     const wrappersBg = document.querySelector('.wrappers__nav--bg');
     const wrappersNav = document.querySelector('.wrappers__nav');
+    const menuNav = window.matchMedia('(min-width: 84.99em)');
     const cartBox = document.querySelector('.cart__box');
     const thumbailsItems = document.querySelector('.wrappers__thumbails');
     const numbersMinus = document.querySelector('.numbers__minus');
@@ -30,6 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonHeadOpen.addEventListener('click', () => menuOpen(wrappersNav, wrappersBg));
 
     buttonHeadClose.addEventListener('click', () => menuClose(wrappersNav, wrappersBg));
+
+    menuList(menuNav);
+
+    menuNav.addEventListener('change', () => {
+       menuList(menuNav);
+    });
 
 /* ############### PRODUCT GALLERY IMAGES ############# */
     buttonCart.addEventListener('click', () => cartCheck(cartBox));
