@@ -1,7 +1,7 @@
 
 import {menuOpen, menuClose, cartCheck} from './menu.js';
 import { imgSneakers, productSneaker } from './products.js';
-import {cartOrder} from './cart.js';
+import {cartOrder, cartAdd, cartTrash} from './cart.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('inicio');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const thumbailsItems = document.querySelector('.wrappers__thumbails');
     const numbersMinus = document.querySelector('.numbers__minus');
     const numbersPlus = document.querySelector('.numbers__plus');
-    const buttonAddCart = document.querySelector('.button__add-cart');
+    const buttonAdd = document.querySelector('.button__add-cart');
     const wrappersActive = document.querySelector('.wrappers__lightbox--active');
     const buttonProduct = document.querySelector('.button__products--active');
 
@@ -60,8 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
         cartOrder(cartNum);
     });
 
+    buttonAdd.addEventListener('click', () => {
+       cartAdd(); 
+    });
 
-
+    buttonTrash.addEventListener('click', () => {
+        cartTrash();
+    });
 
 
 });
