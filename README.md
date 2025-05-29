@@ -57,7 +57,16 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - Javascript Module
+- Basic accessibility implemented (use of ARIA, roles, focus, etc.)
 
+## 🧩 Main features
+
+- Hamburger navigation menu (mobile mode)
+- Product image navigation
+- Expanded lightbox for desktop gallery
+- Shopping cart with counter and summary
+- Feedback message when checking out
+- Responsive design (mobile-first)
 
 ### Useful resources
 
@@ -68,7 +77,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [Ramiro Fernandez](https://rf1303.github.io/Ecommerce-product/)
+- Frontend Mentor - [@rf1303](https://www.frontendmentor.io/solutions/html-css-scss-javascript-mobile-firts-bem-accessibility-MLCC4Oqnb2)
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
