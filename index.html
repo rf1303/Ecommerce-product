@@ -45,11 +45,11 @@
             <section class="wrappers__avatar"> 
                 <section class="cart__avatar"> 
                     <button type="button" class="button__cart" aria-label="Open shopping cart" >
-                        <img class="cart__image" src="./assets/images/icon-cart.svg" alt=""> 
+                        <img class="cart__image" src="./assets/images/icon-cart.svg" alt="icon cart image"> 
                     </button>
                     <span class="cart__number">0</span>    
                 </section>    
-                <img class="avatar__image" src="./assets/images/image-avatar.png" alt=""> 
+                <img class="avatar__image" src="./assets/images/image-avatar.png" alt="image profile"> 
             </section>
         </section>  
         <section class="cart__box display__none"> 
@@ -58,7 +58,7 @@
                 <p class="empty__text">Your cart is empty</p>  
             </section>
             <section class="cart__items display__none"> 
-               <img class="items__images" src="./assets/images/image-product-1-thumbnail.jpg" alt="thumbail">  
+               <img class="items__images" src="./assets/images/image-product-1-thumbnail.jpg" alt="thumbnail image product">  
                <section class="items__product"> 
                    <span class="items__details">Fall Limited Edition Sneakers</span>
                    <section class="items__numbers"> 
@@ -69,12 +69,12 @@
                    </section>
                </section>
                <button type="button" class="button__trash" aria-label="Delete item cart" >
-                   <img class="trash__image" src="./assets/images/icon-delete.svg" alt=""> 
+                   <img class="trash__image" src="./assets/images/icon-delete.svg" alt="icon delete button"> 
                </button>
             </section>
-            <button type="button" class="button__checkout display__none" aria-label="checkout bottom" >Checkout</button>
+            <button type="button" class="button__checkout display__none" aria-label="checkout buttom" >Checkout</button>
         </section>
-        <section class="cart__check--mod display__none"> 
+        <section class="cart__check--mod display__none" role="status"> 
            <p class="check__text">Processing your order</p> 
         </section>
     </header>
@@ -87,7 +87,7 @@
             <section class="wrappers__products">
 
                 <section id="images-1" class="wrappers__images" data-nro="1"> 
-                    <button type="button" class="button__sneaker"><img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt=""></button>
+                    <button type="button" class="button__sneaker"><img class="images__sneakers" src="./assets/images/image-product-1.jpg" alt="produtcs"></button>
                 </section>
                 
                 <button type="button" class="button__prev">
@@ -103,25 +103,25 @@
                 
                 <section class="thumbails__items">   
                     <button class="button__thumbails" type="button" data-img="0" > 
-                        <img class="thumbails__images" src="./assets/images/image-product-1-thumbnail.jpg"  alt="" >  
+                        <img class="thumbails__images" src="./assets/images/image-product-1-thumbnail.jpg"  alt="thumbnail image 01" >  
                      </button> 
                 </section>
 
                 <section class="thumbails__items">   
                     <button class="button__thumbails" type="button" data-img="1" > 
-                        <img class="thumbails__images" src="./assets/images/image-product-2-thumbnail.jpg"  alt="">  
+                        <img class="thumbails__images" src="./assets/images/image-product-2-thumbnail.jpg"  alt="thumbnail image 02">  
                      </button> 
                 </section>
 
                 <section class="thumbails__items">   
                     <button class="button__thumbails" type="button" data-img="2" > 
-                        <img class="thumbails__images" src="./assets/images/image-product-3-thumbnail.jpg"  alt="">  
+                        <img class="thumbails__images" src="./assets/images/image-product-3-thumbnail.jpg"  alt="thumbnail image 03">  
                      </button> 
                 </section>
 
                 <section class="thumbails__items">   
                     <button class="button__thumbails" type="button" data-img="3" > 
-                        <img class="thumbails__images" src="./assets/images/image-product-4-thumbnail.jpg"  alt="">  
+                        <img class="thumbails__images" src="./assets/images/image-product-4-thumbnail.jpg"  alt="thumbnail image 04">  
                      </button> 
                 </section>
             </section>
@@ -168,7 +168,7 @@
         
         <div class="wrappers__product--bg display__none  "></div> <!-- BACKGROUND PRODUCTS ACTIVE -->
 
-        <section class="wrappers__lightbox--active display__none  " id="lightbox"> 
+        <section class="wrappers__lightbox--active display__none  " id="lightbox-active"> 
                 <button type="button"class="button__products--active"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
                 </button>
 
