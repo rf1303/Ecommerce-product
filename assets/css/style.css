@@ -210,7 +210,7 @@ body {
   opacity: 0;
   translate: 0 -35vb;
   transition-property: display opacity;
-  transition-duration: 0.7s;
+  transition-duration: 0.9s;
   transition-behavior: allow-discrete;
 }
 .cart__box:where(:not(.display__none)) {
@@ -286,6 +286,41 @@ body {
   border-radius: 0.5rem;
   padding-block: 0.5rem;
   margin-inline: 1.5rem;
+}
+
+.cart__check--mod {
+  position: absolute;
+  inset-block-start: 2.5rem;
+  inset-inline-end: 2%;
+  inline-size: min(14rem, 100%);
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #69707d;
+  color: #ffffff;
+  box-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 0.3) inset, 0.5px 0.5px 3px rgba(255, 255, 255, 0.3) inset;
+  z-index: 999;
+  opacity: 0;
+  translate: 0 -35vb;
+  transition: opacity 0.9s ease, display 0.9s ease;
+  transition-behavior: allow-discrete;
+}
+.cart__check--mod:where(:not(.display__none)) {
+  display: allow-discrete flex;
+  opacity: 1;
+  translate: 0 0;
+}
+@starting-style {
+  .cart__check--mod:where(:not(.display__none)) {
+    opacity: 0;
+    translate: 0 -35vb;
+  }
+}
+
+.check__text {
+  font-family: kumbh, kumbhttf, sans-serif;
+  font-size: 0.938rem;
+  font-weight: 500;
+  text-align: center;
 }
 
 .wrappers__products {
@@ -715,6 +750,12 @@ body {
     outline: 0.016rem solid #ff7e1b;
     outline-offset: -0.013rem;
   }
+  .button__thumbails--light {
+    position: relative;
+    outline: 0.016rem solid #ff7e1b;
+    outline-offset: -0.01rem;
+    border-radius: 0.625rem;
+  }
   .thumbails__images {
     inline-size: 5.5rem;
     block-size: 5.5rem;
@@ -732,7 +773,7 @@ body {
     background: rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
     border-radius: 0.625rem;
-    outline: 0.16rem solid #ff7e1b;
+    outline: 0.019rem solid #ff7e1b;
     outline-offset: -0.013rem;
     cursor: pointer;
   }

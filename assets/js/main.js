@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const buttonCart = document.querySelector('.button__cart');
     const buttonTrash = document.querySelector('.button__trash');
     const buttonCheck = document.querySelector('.button__checkout');
-    const imageSneaker = document.querySelector('.images__sneakers');
     const buttonPrev = document.querySelector('.button__prev');
     const buttonNext = document.querySelector('.button__next');
     const buttonPrevL = document.querySelector('.button__prev--active');
@@ -18,14 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const wrappersNav = document.querySelector('.wrappers__nav');
     const menuNav = window.matchMedia('(min-width: 84.99em)');
     const cartBox = document.querySelector('.cart__box');
-    const thumbailsItems = document.querySelector('.wrappers__thumbails');
     const numbersMinus = document.querySelector('.numbers__minus');
     const numbersPlus = document.querySelector('.numbers__plus');
     const buttonAdd = document.querySelector('.button__add-cart');
     const buttonSneaker = document.querySelector('.button__sneaker');
     const btnsThumbail = document.querySelectorAll('.button__thumbails'); 
     const btnsThumbLight = document.querySelectorAll('.button__thumbails--light'); 
-    const wrappersActive = document.querySelector('.wrappers__lightbox--active');
+    const checkMod = document.querySelector('.cart__check--mod');
     const buttonProduct = document.querySelector('.button__products--active');
 
     let imgIndex = 0;
@@ -134,5 +132,11 @@ document.addEventListener('DOMContentLoaded', function () {
         cartNum = 0;
     });
 
+    buttonCheck.addEventListener('click', () => {
+        checkMod.classList.remove('display__none');
+        setTimeout(() => {
+            checkMod.classList.add('display__none');
+        }, 3500);
+    });
 
 });
