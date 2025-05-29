@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const numbersPlus = document.querySelector('.numbers__plus');
     const buttonAdd = document.querySelector('.button__add-cart');
     const buttonSneaker = document.querySelector('.button__sneaker');
+    const btnsThumbail = document.querySelectorAll('.button__thumbails'); 
     const wrappersActive = document.querySelector('.wrappers__lightbox--active');
     const buttonProduct = document.querySelector('.button__products--active');
 
@@ -68,6 +69,23 @@ document.addEventListener('DOMContentLoaded', function () {
         imgIndex = ( imgIndex + imgSneakers.length) % imgSneakers.length;
         productSneaker(imgIndex, nextPrev);
     });
+
+   btnsThumbail.forEach((btn) => {
+console.log('btnsThumbail:', btnsThumbail.length); // ¿es 0?
+        
+        console.log('btnsThumbails:foreach ');
+      btn.addEventListener("click", () => {
+console.log('btnsThumbail:adentro', btnsThumbail.length); // ¿es 0?
+            
+        const index = parseInt(btn.dataset.img);
+        console.log('btnsThumbails: ', index);
+        productSneaker(index, 1);
+      });
+   }); 
+
+    // btnsThumbail.addEventListener('click', function(e) {
+    //     console.log('thumb', e.target);
+    // }) 
 
 /* ################ CART BOX ################### */    
 
