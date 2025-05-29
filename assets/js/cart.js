@@ -12,6 +12,7 @@ export function cartOrder(i) {
         
         if (i <= 0) {
             i = 0;
+            ni = 0;
             priceNumber.textContent = `$${125}`;  
         } else {
             priceNumber.textContent = `$${125*i}`;  
@@ -32,6 +33,7 @@ export function cartAdd() {
     const priceNumber = document.querySelector('.items__price');
     const itemNumber = document.querySelector('.items__nro');
     const itemsTotal = document.querySelector('.items__total');
+    const numberOrder = document.querySelector('.numbers__order');
     pf = pn*nc;
     cartEmpty.classList.add('display__none');
     buttonCheck.classList.remove('display__none');
@@ -40,7 +42,9 @@ export function cartAdd() {
     priceNumber.textContent = `$${pn}`;
     itemNumber.textContent = `${nc}`;
     itemsTotal.textContent = `${pf}`;
-
+    numberOrder.textContent = `0`;
+   
+    ni = 0;
 }
 
 export function cartTrash() {
@@ -52,7 +56,7 @@ export function cartTrash() {
     buttonCheck.classList.add('display__none');
     cartItems.classList.add('display__none');
     cartEmpty.classList.remove('display__none');
-    nc = nc - ni;
+    nc = 0;
     cartNumber.textContent = `0`;
 }
 

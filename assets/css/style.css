@@ -294,6 +294,7 @@ body {
 
 .wrappers__images {
   block-size: 18.75rem;
+  overflow: hidden;
 }
 
 .button__sneaker {
@@ -307,8 +308,7 @@ body {
   object-position: 80% 0%;
   /* transition: transform 1s ease, opacity .7s ease; */
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
-  transform: translateX(0);
-  opacity: 1;
+  transition-behavior: allow-discrete;
 }
 
 .button__prev {
@@ -606,20 +606,20 @@ body {
     margin-inline: auto;
     z-index: 200;
     opacity: 0;
-    translate: -15vh 0;
+    translate: -10vh 0;
     transition-property: display opacity translate;
     transition-duration: 1s;
     transition-behavior: allow-discrete;
   }
   .wrappers__lightbox--active:where(:not(.display__none)) {
-    display: allow-discrete flex;
+    display: allow-discrete grid;
     opacity: 1;
     translate: 0 0;
   }
   @starting-style {
     .wrappers__lightbox--active:where(:not(.display__none)) {
       opacity: 0;
-      translate: -15vh 0;
+      translate: -10vh 0;
     }
   }
   .wrappers__products--active {
@@ -640,11 +640,30 @@ body {
     color: #ffffff;
     z-index: 290;
   }
+  .wrappers__images--active,
   .images__sneakers--active {
     inline-size: 34.375rem;
     block-size: 34.375rem;
     border-radius: 1rem;
     object-position: 0 0;
+    opacity: 1;
+    translate: -10vh 0;
+    transition-property: display opacity translate;
+    transition-duration: 1s;
+    transition-behavior: allow-discrete;
+  }
+  .wrappers__images--active:where(:not(.display__none)),
+  .images__sneakers--active:where(:not(.display__none)) {
+    display: allow-discrete block;
+    opacity: 1;
+    translate: 0 0;
+  }
+  @starting-style {
+    .wrappers__images--active:where(:not(.display__none)),
+    .images__sneakers--active:where(:not(.display__none)) {
+      opacity: 0;
+      translate: -10vh 0;
+    }
   }
   .wrappers__products {
     margin: 0;
@@ -652,6 +671,7 @@ body {
   }
   .wrappers__images {
     block-size: 27.813rem;
+    overflow: hidden;
   }
   .images__sneakers {
     block-size: 27.813rem;
@@ -689,13 +709,11 @@ body {
     grid-template-columns: repeat(4, minmax(5.5rem, 1fr));
     gap: 2rem;
   }
-  .thumbails__items {
+  .button__thumbails {
     position: relative;
     border-radius: 0.625rem;
     outline: 0.016rem solid #ff7e1b;
     outline-offset: -0.013rem;
-    transition: all 0.5 ease;
-    overflow: hidden;
   }
   .thumbails__images {
     inline-size: 5.5rem;
@@ -703,9 +721,8 @@ body {
     border-radius: 0.5rem;
     object-fit: contain;
   }
-  .thumbails__items::before {
-    display: none;
-    opacity: 0;
+  .button__thumbails:hover::before {
+    opacity: 1;
     content: "";
     position: absolute;
     inset-block-start: 0;
@@ -714,9 +731,24 @@ body {
     block-size: 100%;
     background: rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
+    border-radius: 0.625rem;
+    outline: 0.16rem solid #ff7e1b;
+    outline-offset: -0.013rem;
+    cursor: pointer;
   }
-  .thumbails__items:hover::before {
+  .button__thumbails--active::before {
     opacity: 1;
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    transition: all 0.3s ease;
+    border-radius: 0.625rem;
+    outline: 0.16rem solid #ff7e1b;
+    outline-offset: -0.013rem;
     cursor: pointer;
   }
   .content__orders {

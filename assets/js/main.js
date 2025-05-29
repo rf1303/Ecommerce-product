@@ -1,6 +1,5 @@
-
-import {menuOpen, menuClose, cartCheck, menuList, lightBox, lightClose} from './menu.js';
-import { imgSneakers, productSneaker } from './products.js';
+import {menuOpen, menuClose, cartCheck, menuList, lightBox, lightClose, lightBoxChange} from './menu.js';
+import { imgSneakers, productSneaker, prodSneakLight} from './products.js';
 import {cartOrder, cartAdd, cartTrash} from './cart.js';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const imageSneaker = document.querySelector('.images__sneakers');
     const buttonPrev = document.querySelector('.button__prev');
     const buttonNext = document.querySelector('.button__next');
+    const buttonPrevL = document.querySelector('.button__prev--active');
+    const buttonNextL = document.querySelector('.button__next--active');
     const wrappersBg = document.querySelector('.wrappers__nav--bg');
     const wrappersNav = document.querySelector('.wrappers__nav');
     const menuNav = window.matchMedia('(min-width: 84.99em)');
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const buttonAdd = document.querySelector('.button__add-cart');
     const buttonSneaker = document.querySelector('.button__sneaker');
     const btnsThumbail = document.querySelectorAll('.button__thumbails'); 
+    const btnsThumbLight = document.querySelectorAll('.button__thumbails--light'); 
     const wrappersActive = document.querySelector('.wrappers__lightbox--active');
     const buttonProduct = document.querySelector('.button__products--active');
 
@@ -35,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonHeadClose.addEventListener('click', () => menuClose(wrappersNav, wrappersBg));
 
 /* ######## MENU NAV DESKTOP ############ */
-    menuList(menuNav);
+     menuList(menuNav); 
 
     menuNav.addEventListener('change', () => {
-       menuList(menuNav);
-       lightBox(menuNav);
+        menuList(menuNav);
+        lightBoxChange(menuNav);
     });
 
 /* ###############  LIGHTBOX  ############## */
@@ -53,8 +55,11 @@ document.addEventListener('DOMContentLoaded', function () {
         lightClose();
     });
 
-/* ############### PRODUCT GALLERY IMAGES ############# */
+/* ########## CART BOX ######################## */
+
     buttonCart.addEventListener('click', () => cartCheck(cartBox));
+
+/* ############### PRODUCT GALLERY IMAGES ############# */
 
     buttonPrev.addEventListener('click', () => {
         imgIndex--;
@@ -71,21 +76,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
    btnsThumbail.forEach((btn) => {
-console.log('btnsThumbail:', btnsThumbail.length); // ¿es 0?
         
-        console.log('btnsThumbails:foreach ');
       btn.addEventListener("click", () => {
-console.log('btnsThumbail:adentro', btnsThumbail.length); // ¿es 0?
-            
-        const index = parseInt(btn.dataset.img);
-        console.log('btnsThumbails: ', index);
-        productSneaker(index, 1);
+        const i = parseInt(btn.dataset.img);
+        productSneaker(i, 1);
+
+        btnsThumbail.forEach((b) => b.classList.remove("button__thumbails--active"));
+        btn.classList.add("button__thumbails--active")
+        });
+   }); 
+
+/* ################## LIGHTBOX ACTIVE ############## */
+
+    buttonPrevL.addEventListener('click', () => {
+        imgIndex--;
+        imgIndex = ( imgIndex + imgSneakers.length) % imgSneakers.length;
+        console.log('ButtonPL: ', imgIndex)
+        prodSneakLight(imgIndex);
+    });
+
+    buttonNextL.addEventListener('click', () => {
+        imgIndex++;
+        imgIndex = ( imgIndex + imgSneakers.length) % imgSneakers.length;
+        console.log('ButtonNL: ', imgIndex)
+        prodSneakLight(imgIndex);
+    });
+
+   btnsThumbLight.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const i = parseInt(btn.dataset.img);
+        prodSneakLight(i);
+        btnsThumbLight.forEach((b) => b.classList.remove("button__thumbails--active"));
+            btn.classList.add("button__thumbails--active")
       });
    }); 
 
-    // btnsThumbail.addEventListener('click', function(e) {
-    //     console.log('thumb', e.target);
-    // }) 
 
 /* ################ CART BOX ################### */    
 
@@ -100,11 +125,13 @@ console.log('btnsThumbail:adentro', btnsThumbail.length); // ¿es 0?
     });
 
     buttonAdd.addEventListener('click', () => {
-       cartAdd(); 
+        cartAdd(); 
+        cartNum = 0;
     });
 
     buttonTrash.addEventListener('click', () => {
         cartTrash();
+        cartNum = 0;
     });
 
 

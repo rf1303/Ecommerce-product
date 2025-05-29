@@ -39,6 +39,15 @@ export function lightBox(e) {
     } 
 }
 
+export function lightBoxChange(e) {
+    const wrappersBg = document.querySelector('.wrappers__nav--bg');
+    const wrappersActive = document.querySelector('.wrappers__lightbox--active');
+    if (!e.matches) {
+        wrappersActive.classList.add('display__none');
+        wrappersBg.classList.add('display__none');
+    }
+}
+
 export function lightClose() {
     const wrappersBg = document.querySelector('.wrappers__nav--bg');
     const wrappersActive = document.querySelector('.wrappers__lightbox--active');
